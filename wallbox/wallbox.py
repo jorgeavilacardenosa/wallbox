@@ -37,6 +37,7 @@ class Wallbox:
             response = requests.get(
                 f"{self.authUrl}users/signin",
                 auth=HTTPBasicAuth(self.username, self.password),
+                headers={'Partner': 'wallbox'},
                 timeout=self._requestGetTimeout
             )
             response.raise_for_status()
